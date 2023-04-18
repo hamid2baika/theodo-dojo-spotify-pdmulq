@@ -21,7 +21,7 @@ const App = () => {
 		queryKey: ['tracks'],
 		queryFn: fetchTracks
   });
-
+console.log("&&&&&&&&&&&&&&&&&&&&",tracks)
   
   return (
     <div className="App">
@@ -31,7 +31,7 @@ const App = () => {
       </header>
       <div className="App-images">
         <p>Ecoutes ta muzika la plus préférée! </p>
-        <audio src={trackUrls[trackIndex]} autoPlay controls />
+        <audio src={tracks[trackIndex].track.preview_url} autoPlay controls />
         <button onClick={goToNextTrack}>Next track</button>
       </div>
       <div className="App-buttons"></div>

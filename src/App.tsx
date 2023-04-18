@@ -8,30 +8,22 @@ const trackUrls = [
   'https://p.scdn.co/mp3-preview/0f6b8a3524ec410020457da4cdd7717f9addce2f',
   'https://p.scdn.co/mp3-preview/ac28d1b0be285ed3bfd8e9fa5fad133776d7cf36',
 ];
-const [trackIndex, setTrackIndex] = useState(0)
-const goToNextTrack = () => {
-  setTrackIndex(trackIndex + 1);
-}
-
-
-
 
 const App = () => {
+  const [trackIndex, setTrackIndex] = useState(0);
+  const goToNextTrack = () => {
+    setTrackIndex(trackIndex + 1);
+  };
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <h1 className="App-title">Bienvenue sur le blind test</h1>
+        <h1 className="App-title">Bienvenue sur muzika</h1>
       </header>
       <div className="App-images">
-        <p>Ecoutes ton morceau le plus préféré! </p>
+        <p>Ecoutes ta muzika la plus préférée! </p>
         <audio src={trackUrls[trackIndex]} autoPlay controls />
-            <button onClick={goToNextTrack}>
-             Next track
-            </button>
-        
-        
-        
+        <button onClick={goToNextTrack}>Next track</button>
       </div>
       <div className="App-buttons"></div>
     </div>
